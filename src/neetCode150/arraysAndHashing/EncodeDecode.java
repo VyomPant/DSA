@@ -3,10 +3,11 @@ package neetCode150.arraysAndHashing;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/*Time complexity: O(m) for encode() and decode()
- Space complexity: O(1) for encode() and decode()
-*/
+
+// https://neetcode.io/problems/string-encode-and-decode
 public class EncodeDecode {
+    /* Time complexity: O(m) for encode() and decode()
+       Space complexity: O(1) for encode() and decode() */
     private static String encode(List<String> strs) {
         // strs = [hello,tom]
         StringBuilder encodedString = new StringBuilder();
