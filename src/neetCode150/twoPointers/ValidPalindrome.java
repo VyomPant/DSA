@@ -26,7 +26,7 @@ public class ValidPalindrome {
     }
 
     // use Character.isLetterOrDigit(char c) instead of this
-    private static boolean alphaNum(char c) {
+    private static boolean isAlphaNumeric(char c) {
         return (c >= 'A' && c <= 'Z' ||
                 c >= 'a' && c <= 'z' ||
                 c >= '0' && c <= '9');

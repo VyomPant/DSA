@@ -7,7 +7,7 @@ import java.util.Map;
 // https://leetcode.com/problems/two-sum/description/
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();//key = arrayValue, value = index of the value in the array
+        Map<Integer, Integer> map = new HashMap<>();// key = nums value(nums[i]), value = index of the value in the array nums (i)
         for(int i = 0; i < nums.length; i++) {
             int compliment = target - nums[i];// compliment + nums[i] = target
             //check if compliment exists in the hashmap, this implies there exists a number in the array in which we can add another number to achieve the target

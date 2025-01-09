@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// https://leetcode.com/problems/3sum/description/
 public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -12,8 +13,7 @@ public class ThreeSum {
             return result;
         }
 
-        Map<Integer, Integer> valueIndexMap = new HashMap<>();
-        // add arrayValues(keys) with indices(values) to the hashmap (for fast retrieval)
+        Map<Integer, Integer> valueIndexMap = new HashMap<>(); // key = nums value(nums[i]), value = index of the value in the array nums (i)
         for (int i = 0; i < nums.length; i++) {
             valueIndexMap.put(nums[i], i);
         }
