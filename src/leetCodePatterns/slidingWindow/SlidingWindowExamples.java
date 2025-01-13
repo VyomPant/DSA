@@ -49,10 +49,15 @@ public class SlidingWindowExamples {
         return maxSum;
     }
 
-    // Example 2: Find the length of the longest substring without repeating characters.
+    /* Example 2: Find the length of the longest substring without repeating characters.
+    Time complexity:O(n)
+    Space complexity:O(m)
+    Where n is the length of the string and and m is the total number of unique characters in the string.
+    */
     public static int longestUniqueSubstring(String s) {
-        HashSet<Character> charSet = new HashSet<>();
-        int maxLength = 0, start = 0;
+        HashSet<Character> charSet = new HashSet<>(); // for O(1) lookup in the window
+        int maxLength = 0;// result (longest window's size = end - start + 1)
+        int start = 0; // starting point of the window
 
         for (int end = 0; end < s.length(); end++) {
             // Shrink the window until the current character is unique
@@ -60,7 +65,7 @@ public class SlidingWindowExamples {
                 charSet.remove(s.charAt(start));
                 start++;
             }
-            charSet.add(s.charAt(end));
+            charSet.add(s.charAt(end)); // add the character in th
             maxLength = Math.max(maxLength, end - start + 1);
         }
 
