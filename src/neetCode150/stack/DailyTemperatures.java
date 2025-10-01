@@ -3,37 +3,71 @@ package neetCode150.stack;
 import java.util.Arrays;
 import java.util.Stack;
 /*
-https://leetcode.com/problems/daily-temperatures/description/
-Given an array of integers temperatures represents the daily temperatures,
-return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature.
-If there is no future day for which this is possible, keep answer[i] == 0 instead.
+     * Problem: For each day, find how many days you have to wait until a warmer temperature.
+     * If there is no future warmer day, the answer is 0.
+        https://leetcode.com/problems/daily-temperatures/description/
+        Given an array of integers temperatures represents the daily temperatures,
+        return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature.
+        If there is no future day for which this is possible, keep answer[i] == 0 instead.
 */
 
 public class DailyTemperatures {
-    /* Time complexity:O(1)
+    /* Brute force Solution
+     using two loops Time complexity:O(n^2)
      Space complexity:O(n) */
-    public static int[] dailyTemperatures(int[] temperatures) {
+    public int[] dailyTemperaturesBruteForce(int[] temperatures) {
         int n = temperatures.length;
-        int[] answer = new int[n];
-        Stack<Integer> stack = new Stack<>(); // Stack to store indices
+        int[] res = new int[n];
 
         for (int i = 0; i < n; i++) {
-            /* We're going day by day, i being the current day's index.
-            We check if today’s temperature (temperatures[i]) is warmer than the temperature at the top index of the stack (temperatures[stack.peek()]).
-
-            If so, we found a future warmer day for that earlier day!
-
-            We pop the index, calculate how many days passed: i - prevIndex, and set answer[prevIndex].
-             */
-            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
-                int prevIndex = stack.pop();
-                answer[prevIndex] = i - prevIndex; // diff in days
+            for (int j = i + 1; j < n; j++) {
+                if (temperatures[j] > temperatures[i]) {
+                    res[i] = j - i;
+                    break;
+                }
             }
-            stack.push(i); // Push current day's index to stack
         }
+        return res;
+    }
+
+    /* Note : In Java, when you create an int[] array like this:
+     int[] res = new int[n];
+    All the values in the array are automatically initialized to 0 by default, because int is a primitive data type in Java.
+     */
+
+
+    /*
+     * Optimized Solution using a Stack (Monotonic Decreasing Stack)
+     * Time Complexity: O(n)  -> Each index is pushed and popped at most once
+     * Space Complexity: O(n) -> Stack to store indices
+     */
+
+    public static int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        int[] answer = new int[n]; // array to store the result (default initialized to 0)
+        Stack<Integer> stack = new Stack<>(); // stack to store indices of days
+
+        // Iterate through each day's temperature
+        for (int i = 0; i < n; i++) {
+
+            // Check if current day's temperature is warmer than the temperature
+            // at the day represented by the index at the top of the stack
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int prevIndex = stack.pop();          // Pop the index of the previous cooler day
+                answer[prevIndex] = i - prevIndex;   // Number of days until a warmer temperature
+            }
+
+            // Push current day's index onto the stack
+            // This day might be a future warmer day for upcoming days
+            stack.push(i);
+        }
+
+        // Any indices left in the stack don't have a warmer future day
+        // answer[i] for them remains 0 (default value)
 
         return answer;
     }
+
 
     public static void main(String[] args) {
         int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
