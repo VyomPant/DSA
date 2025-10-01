@@ -66,8 +66,6 @@ class CarFleet {
             // 3.2. if current car on top takes less that or equal time than the one behind it, it means it will catch up -> that car becomes part of the same fleet -> so we can discard it
             // in this way our stack will store only one element for each distinct fleet
 
-            Double previousCarTime = stack.get(stack.size() - 2);      // Time for car just before current one
-
             if (stack.size() >= 2 &&
                 stack.peek() <= stack.get(stack.size() - 2)) {
                 // remove current car since it merges with the car ahead and becomes part of the same fleet
