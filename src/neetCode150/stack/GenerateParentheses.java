@@ -20,7 +20,7 @@ import java.util.List;
 
 */
 public class GenerateParentheses {
-    // TO DO : Time and space complexity analysis
+    // Todo : Time and space complexity analysis
 
     /*  Recursive approach
     1. Only Add open parenthesis if open < n
