@@ -3,7 +3,7 @@
 Welcome to my DSA project! Here you'll find solutions, notes, and tips for acing interviews.
 
 ## 📚 Notes
-- [Sliding Window Technique](src/leetCodePatterns/slidingWindow/slidingWindowNotes.md)
+- [Sliding Window Technique](src/practice/slidingWindow/slidingWindowNotes.md)
 - [Sorting Algorithms](notes/sorting_algorithms.md)
 - [Dynamic Programming](notes/dynamic_programming.md)
 - [Two Pointers Technique](notes/two_pointers.md)
@@ -15,7 +15,7 @@ This repository also includes solutions for various problems.
 
 
 - **NeetCode 150 sheet Problems**: Found in the `src/neetCode150` folder.
-- **Common LeetCode Patterns Problems**: Found in the `src/leetCodePatterns` folder.
+- **Common LeetCode Patterns Problems**: Found in the `src/practice` folder.
 
 ## 🚀 How to Use This Repository
 1. Clone the repo:

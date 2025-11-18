@@ -1,4 +1,4 @@
-package leetCodePatterns.slidingWindow;
+package practice.slidingWindow;
 
 import java.util.Deque;
 import java.util.HashSet;
