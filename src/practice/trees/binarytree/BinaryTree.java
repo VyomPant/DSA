@@ -31,7 +31,7 @@ class BinaryTree {
      *    4   5
      */
     public void insert(int val) {
-        TreeNode newNode = new TreeNode(val); // create new node
+        TreeNode newNode = new TreeNode(val); // create new node with specified value
 
         // If tree is empty, new node becomes root
         if (root == null) {
