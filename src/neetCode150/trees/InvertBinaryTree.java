@@ -1,44 +1,33 @@
 package neetCode150.trees;
 
 /**
- * <a href="https://leetcode.com/problems/invert-binary-tree/description/">...</a>
+ * <a href="https://leetcode.com/problems/invert-binary-tree/description/">LeetCode Problem: Invert Binary Tree</a>
+ * <p>
+ * <a href="src/neetCode150/trees/notes/InvertBinaryTree.MD">📝 Detailed Solution Notes</a>
+ * <p>
  * Given the root of a binary tree, invert the tree, and return its root.
+ * <p>
  * Before inversion:
- * 4
- * /   \
- * 2     7
- * / \   / \
- * 1  3  6   9
+ *       4
+ *     /   \
+ *    2     7
+ *   / \   / \
+ *  1  3  6   9
  * <p>
  * After inversion:
- * 4
- * /   \
- * 7     2
- * / \   / \
- * 9  6  3   1
+ *       4
+ *     /   \
+ *    7     2
+ *   / \   / \
+ *  9  6  3   1
  */
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+
 public class InvertBinaryTree {
-    //
 
     /*
     Intuition:  At every node swap(left, right)
