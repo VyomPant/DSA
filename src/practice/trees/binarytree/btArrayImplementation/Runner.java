@@ -7,6 +7,18 @@ package practice.trees.binarytree.btArrayImplementation;
 public class Runner {
     public static void main(String[] args) {
 
+        /**
+         * Insert a value into the tree using level-order insertion.
+         * This does NOT keep the tree sorted; it fills the tree left-to-right at each level.
+         *
+         * Example insertion order: 1,2,3,4,5
+         * Results in:
+         *         1
+         *       /   \
+         *      2     3
+         *     / \
+         *    4   5
+         */
         ArrayBinaryTree tree = new ArrayBinaryTree(10);
 
         tree.insert(1);
